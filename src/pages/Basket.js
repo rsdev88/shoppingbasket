@@ -1,4 +1,5 @@
 import React, {useState, useContext} from "react"
+import {Link} from "react-router-dom"
 import BasketItem from "../components/BasketItem"
 import {AppContext} from "../components/AppContext"
 
@@ -7,6 +8,7 @@ function Basket() {
     const [buttonText, setButtonText] = useState("Place Order")
     const [messageText, setMessageText] = useState("Your basket is empty.")
     const {basketItems, removeAllItemsFromBaskets} = useContext(AppContext)
+
     const basketItemElements = basketItems.map(item => 
         <BasketItem key={item.id} item={item} />
     )
@@ -18,7 +20,10 @@ function Basket() {
             <button onClick={() => handleClick()}>{buttonText}</button>
         </div>
         :
-        <p className="centred">{messageText}</p>
+        <div className="order-message">
+            <p>{messageText}</p>
+            <p>Go back <Link to="/">home</Link> to add more items.</p>
+        </div>
 
     function handleClick(){
         setButtonText("Ordering...")
