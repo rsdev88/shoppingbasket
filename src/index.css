@@ -139,6 +139,34 @@ a:visited { color: var(--light-blue); }
 a:hover { color: var(--light-blue); }
 a:active { color: var(--light-blue); }
 
-p.centred {
+.order-message {
   text-align: center;
+}
+
+.order-message a{
+  color: var(--pink);
+}
+
+.order-message a:hover{
+  text-decoration: underline;
+}
+
+.header-link-basket{
+  vertical-align: middle;
+}
+
+.header-button-addfavourites{
+  border: 2px solid white;
+  background-color: var(--pink);
+  color:white;
+  cursor: pointer;
+  padding: 5px;
+  margin-right: 10px;
+  line-height: 25px;
+  font-weight: bold;
+}
+
+.header-button-addfavourites:hover{
+  background-color: white;
+  color: var(--pink)
 }
